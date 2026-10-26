@@ -1,0 +1,10 @@
+node_modules/
+.expo/
+dist/
+web-build/
+*.log
+.DS_Store
+# local env (do not commit secrets); see .env.example
+.env
+.env.local
+expo-env.d.ts

@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    # In-memory H2 by default; override DB_* env vars to point at a real database
+    # without touching code (keeps deployment decoupled from the app).
+    url: ${DB_URL:jdbc:h2:mem:fittrack;DB_CLOSE_DELAY=-1}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+    driver-class-name: ${DB_DRIVER:org.h2.Driver}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: ${H2_CONSOLE:true}
+      path: /h2-console
+
+# Comma-separated origins allowed to call the API (the frontend's origin).
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:8081,http://localhost:19006,http://localhost:3000}
+  anthropic:
+    # Optional. When set, enables Claude-powered photo macro estimation.
+    # When empty, the app still runs — photo meals require manual macro entry.
+    api-key: ${ANTHROPIC_API_KEY:}

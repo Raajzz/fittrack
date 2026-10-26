@@ -1,0 +1,34 @@
+# ---- Java / Spring Boot (backend/) ----
+backend/target/
+*.class
+
+# ---- React Native / Expo (frontend/) ----
+frontend/node_modules/
+frontend/.expo/
+frontend/dist/
+frontend/web-build/
+
+# ---- Django (backend-django/) ----
+backend-django/.venv/
+backend-django/db.sqlite3
+backend-django/staticfiles/
+__pycache__/
+*.pyc
+
+# ---- Flutter (frontend-flutter/) ----
+frontend-flutter/.dart_tool/
+frontend-flutter/build/
+frontend-flutter/.flutter-plugins
+frontend-flutter/.flutter-plugins-dependencies
+
+# ---- env / secrets ----
+.env
+.env.local
+*/.env
+*/.env.local
+
+# ---- misc ----
+.DS_Store
+*.log
+.idea/
+*.iml
